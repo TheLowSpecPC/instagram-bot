@@ -1,7 +1,8 @@
 from instagrapi import Client
+import credentials
 
-with open("credentials.txt", "r") as f:
-    username, password = f.read().splitlines()
+username = credentials.username
+password = credentials.password
 
 cl = Client()
 cl.login(username, password)

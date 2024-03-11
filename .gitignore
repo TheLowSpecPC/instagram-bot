@@ -2,3 +2,5 @@
 *.xml
 *.iml
 credentials.txt
+*.pyc
+credentials.py
