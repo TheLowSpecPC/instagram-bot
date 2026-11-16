@@ -3,13 +3,15 @@ import credentials
 
 username = credentials.username
 password = credentials.password
+sessionid = credentials.sessionid
 
 cl = Client()
-cl.login(username, password)
+if sessionid:
+    cl.login_by_sessionid(sessionid)
+else:
+    cl.login(username, password)
 
-user_me = cl.user_id_from_username("its_me_alen_roy")
-
-following_whitelist = ['ryan._.cmk', 'albz_.zz', '__owl_girl', '___.han.nah.___', '_jorge.cornejo_', '_sarangi.saru_', 'followback.army']
+user_me = cl.user_id_from_username(username)
 
 following = cl.user_following(user_me)
 followers = cl.user_followers(user_me)
